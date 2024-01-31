@@ -4,37 +4,40 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class UI_NoisePreset : MonoBehaviour
+namespace UltimateNoiseLibrary
 {
-    private NodeEditor NodeEditor;
-
-    [Header("Elements")]
-    public Image PreviewImage;
-    public TextMeshProUGUI NameText;
-    public Button RandomizeButton;
-    public Button CreateNodeButton;
-
-    private GradientNoise Noise;
-
-    public void Init(NodeEditor editor, GradientNoise noise)
+    public class UI_NoisePreset : MonoBehaviour
     {
-        NodeEditor = editor;
-        Noise = noise;
-        NameText.text = noise.Name;
-        UpdatePreviewImage();
-        RandomizeButton.onClick.AddListener(Randomize);
-        CreateNodeButton.onClick.AddListener(() => NodeEditor.AddSourceNoiseNode(noise));
-    }
+        private NodeEditor NodeEditor;
 
-    private void UpdatePreviewImage()
-    {
-        Sprite previewSprite = Noise.CreateTestSprite();
-        PreviewImage.sprite = previewSprite;
-    }
+        [Header("Elements")]
+        public Image PreviewImage;
+        public TextMeshProUGUI NameText;
+        public Button RandomizeButton;
+        public Button CreateNodeButton;
 
-    private void Randomize()
-    {
-        Noise.RandomizeSeed();
-        UpdatePreviewImage();
+        private GradientNoise Noise;
+
+        public void Init(NodeEditor editor, GradientNoise noise)
+        {
+            NodeEditor = editor;
+            Noise = noise;
+            NameText.text = noise.Name;
+            UpdatePreviewImage();
+            RandomizeButton.onClick.AddListener(Randomize);
+            CreateNodeButton.onClick.AddListener(() => NodeEditor.AddSourceNoiseNode(noise));
+        }
+
+        private void UpdatePreviewImage()
+        {
+            Sprite previewSprite = Noise.CreateTestSprite();
+            PreviewImage.sprite = previewSprite;
+        }
+
+        private void Randomize()
+        {
+            Noise.RandomizeSeed();
+            UpdatePreviewImage();
+        }
     }
 }

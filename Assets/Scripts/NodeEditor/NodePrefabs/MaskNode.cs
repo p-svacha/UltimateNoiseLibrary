@@ -2,16 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MaskNode : NodeAttributes
+namespace UltimateNoiseLibrary
 {
-    public override string Description => "Adds two inputs together based on a mask. Input 1 will be set onto the are of the mask and Input 2 on the inversed area of the mask.";
-
-    public override GradientNoise GetOutput()
+    public class MaskNode : NodeAttributes
     {
-        if (Node.Inputs[0] == null) return null;
-        if (Node.Inputs[1] == null) return null;
-        if (Node.Inputs[2] == null) return null;
+        public override string Description => "Adds two inputs together based on a mask. Input 1 will be set onto the are of the mask and Input 2 on the inversed area of the mask.";
 
-        return new ModularGradientNoise(Node.Inputs, new MaskOperation());
+        public override GradientNoise GetOutput()
+        {
+            if (Node.Inputs[0] == null) return null;
+            if (Node.Inputs[1] == null) return null;
+            if (Node.Inputs[2] == null) return null;
+
+            return new ModularGradientNoise(Node.Inputs, new MaskOperation());
+        }
     }
 }

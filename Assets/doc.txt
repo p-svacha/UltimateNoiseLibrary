@@ -1,0 +1,13 @@
+presets:
+white,
+multifractal ridge
+
+node:
+add heightoperation nodes
+	> y = x^2, x^3, 1/x, sqrt(x)
+
+ui:
+title header smaller
+Button tooltips in presets
+label for adding nodes
+hide segmentation panel

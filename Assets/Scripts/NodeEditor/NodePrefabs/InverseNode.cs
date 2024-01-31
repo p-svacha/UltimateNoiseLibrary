@@ -2,14 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InverseNode : NodeAttributes
+namespace UltimateNoiseLibrary
 {
-    public override string Description => "Inverses the input.";
-
-    public override GradientNoise GetOutput()
+    public class InverseNode : NodeAttributes
     {
-        if (Node.Inputs[0] == null) return null;
+        public override string Description => "Inverses the input.";
 
-        return new ModularGradientNoise(Node.Inputs, new InverseOperation());
+        public override GradientNoise GetOutput()
+        {
+            if (Node.Inputs[0] == null) return null;
+
+            return new ModularGradientNoise(Node.Inputs, new InverseOperation());
+        }
     }
 }

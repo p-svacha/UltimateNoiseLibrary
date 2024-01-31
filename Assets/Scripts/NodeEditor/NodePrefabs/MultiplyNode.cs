@@ -3,15 +3,18 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class MultiplyNode : NodeAttributes
+namespace UltimateNoiseLibrary
 {
-    public override string Description => "Multiplies the 2 input nodes.";
-
-    public override GradientNoise GetOutput()
+    public class MultiplyNode : NodeAttributes
     {
-        if (Node.Inputs[0] == null) return null;
-        if (Node.Inputs[1] == null) return null;
+        public override string Description => "Multiplies the 2 input nodes.";
 
-        return new ModularGradientNoise(Node.Inputs, new MultiplyOperation());
+        public override GradientNoise GetOutput()
+        {
+            if (Node.Inputs[0] == null) return null;
+            if (Node.Inputs[1] == null) return null;
+
+            return new ModularGradientNoise(Node.Inputs, new MultiplyOperation());
+        }
     }
 }

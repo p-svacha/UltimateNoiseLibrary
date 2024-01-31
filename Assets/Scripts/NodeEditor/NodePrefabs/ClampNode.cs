@@ -5,9 +5,9 @@ using UnityEngine;
 
 namespace UltimateNoiseLibrary
 {
-    public class CutoffNode : NodeAttributes
+    public class ClampNode : NodeAttributes
     {
-        public override string Description => "All values below the minimum are set to 0. Are values above the maximum are set to 1. All values in-between are normalized";
+        public override string Description => "Clamps all values into the given range.";
 
         [Header("Elements")]
         public TMP_InputField Min;
@@ -29,7 +29,7 @@ namespace UltimateNoiseLibrary
             float min = float.Parse(Min.text);
             float max = float.Parse(Max.text);
 
-            return new ModularGradientNoise(Node.Inputs, new CutoffOperation(min, max));
+            return new ModularGradientNoise(Node.Inputs, new ClampOperation(min, max));
         }
     }
 }
