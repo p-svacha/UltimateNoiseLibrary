@@ -1,10 +1,10 @@
-presets:
-white,
-multifractal ridge
-
 node:
 add heightoperation nodes
 	> y = x^2, x^3, 1/x, sqrt(x)
+cutoff -> split into 3: 
+	> binary-cutoff: sets all values outside of min/max to 0
+	> mean: set a center and range - center => 1, center+-range => 0, lerp in-between
+	> normalize or "min-max-scaling": same as current version
 
 ui:
 title header smaller

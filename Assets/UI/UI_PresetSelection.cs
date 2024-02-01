@@ -26,6 +26,8 @@ namespace UltimateNoiseLibrary
 
             HelperFunctions.DestroyAllChildredImmediately(InfiniteGradientContainer, skip: 1);
             InsertInfiniteGradientNoisePreset(new PerlinNoise());
+            InsertInfiniteGradientNoisePreset(new WhiteNoise());
+            InsertInfiniteGradientNoisePreset(new RidgedMultifractalNoise());
 
             HelperFunctions.DestroyAllChildredImmediately(FiniteSegmentationContainer, skip: 1);
         }

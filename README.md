@@ -3,4 +3,4 @@ The project is at its core a node editor for gradient noises. It includes some p
 
 # Screenshots
 *Node Editor*
-<br/><img src="Screenshots/nodeEditor.png" alt="Node Editor" height="200" /><br/>
+<br/><img src="Screenshots/nodeEditor1.png" alt="Node Editor" height="200" /><br/>

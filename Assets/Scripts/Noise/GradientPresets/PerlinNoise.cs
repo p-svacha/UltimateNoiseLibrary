@@ -9,7 +9,7 @@ namespace UltimateNoiseLibrary
     /// </summary>
     public class PerlinNoise : GradientNoise
     {
-        public override string Name => "Perlin Noise";
+        public override string Name => "Perlin";
 
         // Parameters
         public float Scale;
@@ -24,8 +24,8 @@ namespace UltimateNoiseLibrary
         protected override void OnNewSeed()
         {
             Scale = 0.05f;
-            XShift = Random.Range(-10000f, 10000f);
-            YShift = Random.Range(-10000f, 10000f);
+            XShift = GetRandomFloat(-10000f, 10000f);
+            YShift = GetRandomFloat(-10000f, 10000f);
         }
 
         public override float GetValue(float x, float y)
