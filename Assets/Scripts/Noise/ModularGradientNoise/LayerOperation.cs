@@ -6,10 +6,10 @@ namespace UltimateNoiseLibrary
 {
     public class LayerOperation : NoiseOperation
     {
-        private int NumOctaves;
-        private float Lacunarity;
-        private float Persistence;
-        private Vector2Int[] Offsets;
+        public int NumOctaves;
+        public float Lacunarity;
+        public float Persistence;
+        public Vector2Int[] Offsets;
 
         public LayerOperation(int numOctaves, float lacunarity, float persistence)
         {
@@ -21,6 +21,7 @@ namespace UltimateNoiseLibrary
             Offsets[0] = Vector2Int.zero;
         }
 
+        public override int NumInputs => 1;
         public override float DoOperation(GradientNoise[] inputs, float x, float y)
         {
             float value = 0f;

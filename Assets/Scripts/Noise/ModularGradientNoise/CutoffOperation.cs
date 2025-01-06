@@ -6,8 +6,8 @@ namespace UltimateNoiseLibrary
 {
     public class CutoffOperation : NoiseOperation
     {
-        private float Min;
-        private float Max;
+        public float Min;
+        public float Max;
 
         public CutoffOperation(float min, float max)
         {
@@ -15,6 +15,7 @@ namespace UltimateNoiseLibrary
             Max = max;
         }
 
+        public override int NumInputs => 1;
         public override float DoOperation(GradientNoise[] inputs, float x, float y)
         {
             float value = inputs[0].GetValue(x, y);

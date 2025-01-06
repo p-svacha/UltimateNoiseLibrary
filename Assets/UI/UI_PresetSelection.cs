@@ -17,7 +17,7 @@ namespace UltimateNoiseLibrary
         public GameObject FiniteSegmentationContainer;
 
         // Layout values
-        private const int PRESETS_PER_ROW = 4;
+        private const int PRESETS_PER_ROW = 3;
         private GameObject CurrentInfiniteGradientRow;
 
         public void Init(NodeEditor editor)
@@ -25,9 +25,10 @@ namespace UltimateNoiseLibrary
             NodeEditor = editor;
 
             HelperFunctions.DestroyAllChildredImmediately(InfiniteGradientContainer, skip: 1);
-            InsertInfiniteGradientNoisePreset(new PerlinNoise());
-            InsertInfiniteGradientNoisePreset(new WhiteNoise());
-            InsertInfiniteGradientNoisePreset(new RidgedMultifractalNoise());
+            foreach(GradientNoise gradientNoise in NodeEditor.GradientNoisePresets)
+            {
+                InsertInfiniteGradientNoisePreset(gradientNoise);
+            }
 
             HelperFunctions.DestroyAllChildredImmediately(FiniteSegmentationContainer, skip: 1);
         }

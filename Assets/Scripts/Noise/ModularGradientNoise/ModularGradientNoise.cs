@@ -11,8 +11,8 @@ namespace UltimateNoiseLibrary
     {
         public override string Name => "Modular Gradient";
 
-        private GradientNoise[] Inputs;
-        private NoiseOperation Operation;
+        public GradientNoise[] Inputs;
+        public NoiseOperation Operation;
 
         public ModularGradientNoise(GradientNoise[] inputs, NoiseOperation operation)
         {

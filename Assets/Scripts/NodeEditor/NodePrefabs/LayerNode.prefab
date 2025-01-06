@@ -464,13 +464,29 @@ PrefabInstance:
       propertyPath: m_Name
       value: LayerNode
       objectReference: {fileID: 0}
+    - target: {fileID: 3075189521065700749, guid: 6b2a50ce29584ef46933b51563a422bf, type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 5321858228699645953, guid: 6b2a50ce29584ef46933b51563a422bf, type: 3}
       propertyPath: NodeDisplayName
       value: Layer
       objectReference: {fileID: 0}
+    - target: {fileID: 5347779270330927481, guid: 6b2a50ce29584ef46933b51563a422bf, type: 3}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 5452416666981258382, guid: 6b2a50ce29584ef46933b51563a422bf, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6910458408778046538, guid: 6b2a50ce29584ef46933b51563a422bf, type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6980721231775355889, guid: 6b2a50ce29584ef46933b51563a422bf, type: 3}
+      propertyPath: m_RootOrder
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6980721231805227722, guid: 6b2a50ce29584ef46933b51563a422bf, type: 3}
       propertyPath: m_LocalScale.y
@@ -482,7 +498,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7762006824426497300, guid: 6b2a50ce29584ef46933b51563a422bf, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7875303237601550902, guid: 6b2a50ce29584ef46933b51563a422bf, type: 3}
       propertyPath: m_RootOrder
@@ -530,7 +546,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7958754142476741058, guid: 6b2a50ce29584ef46933b51563a422bf, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 9204795375464111990, guid: 6b2a50ce29584ef46933b51563a422bf, type: 3}
       propertyPath: m_IsActive

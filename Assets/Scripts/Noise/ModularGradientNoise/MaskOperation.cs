@@ -6,6 +6,7 @@ namespace UltimateNoiseLibrary
 {
     public class MaskOperation : NoiseOperation
     {
+        public override int NumInputs => 3;
         public override float DoOperation(GradientNoise[] inputs, float x, float y)
         {
             float value1 = inputs[0].GetValue(x, y);

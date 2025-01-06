@@ -12,22 +12,34 @@ namespace UltimateNoiseLibrary
     {
         public int Seed { get; private set; }
         public abstract string Name { get; }
-        protected System.Random RNG { get; private set; }
+        public float Scale { get; protected set; }
 
         public Noise()
         {
+            Scale = 1f;
             RandomizeSeed();
         }
-        public Noise(int seed)
+        public Noise(float scale)
         {
+            Scale = scale;
+            RandomizeSeed();
+        }
+        public Noise(int seed, float scale)
+        {
+            Scale = scale;
             SetSeed(seed);
         }
 
         public void SetSeed(int newSeed)
         {
             Seed = newSeed;
-            RNG = new System.Random(Seed);
+            Random.InitState(Seed);
             OnNewSeed();
+        }
+
+        public void SetScale(float newScale)
+        {
+            Scale = newScale;
         }
 
         /// <summary>
@@ -44,8 +56,7 @@ namespace UltimateNoiseLibrary
 
         protected float GetRandomFloat(float min, float max)
         {
-            float range = max - min;
-            return (float)(RNG.NextDouble() * range + min);
+            return Random.Range(min, max);
         }
 
         public abstract Sprite CreateTestSprite(int size = 128);

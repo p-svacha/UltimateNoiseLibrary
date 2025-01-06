@@ -17,6 +17,7 @@ namespace UltimateNoiseLibrary
         public string NodeDisplayName;
         public GameObject Header;
         public TMP_Text Title;
+        public GameObject CopyToClipboardButton;
         public GameObject InfoButton;
         public GameObject RemoveButton;
         public SpriteRenderer Preview;
@@ -69,6 +70,11 @@ namespace UltimateNoiseLibrary
                     if (hit.transform.gameObject == OutputButton)
                     {
                         NodeEditor.StartConnecting(this);
+                        return;
+                    }
+                    if (hit.transform.gameObject == CopyToClipboardButton)
+                    {
+                        NodeEditor.CopyOutputNoiseToClipboard(this);
                         return;
                     }
                     for (int i = 0; i < InputButtons.Length; i++)
